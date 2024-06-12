@@ -1,0 +1,38 @@
+<div class="max-w-4xl mx-auto p-4">
+  <h1 class="text-3xl font-bold mb-6">Cronograma de Pagos</h1>
+
+  <div *ngIf="errorMessage" class="text-red-500">
+    {{ errorMessage }}
+  </div>
+
+  <div *ngIf="schedule">
+    <ul class="divide-y divide-gray-200">
+      <li *ngFor="let payment of schedule" class="py-4">
+        <div class="flex justify-between items-center">
+          <div>
+            <p class="text-lg font-semibold">ID de Pago: {{ payment.idPayment }}</p>
+            <p class="text-sm">Descripción de la cuota: {{ payment.quoteDescription }}</p>
+            <p class="text-sm">Próximo vencimiento: {{ payment.nextExpiration }}</p>
+          </div>
+          <div>
+            <p class="text-lg font-semibold">Monto en USD: {{ payment.quoteUsd }}</p>
+            <div class="flex space-x-2 mt-2">
+              <button (click)="aceptarPago(payment)" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
+                Aceptar
+              </button>
+              <button (click)="rechazarPago(payment)" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
+                Rechazar
+              </button>
+            </div>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+
+
+
+
+  
