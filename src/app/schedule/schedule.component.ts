@@ -40,11 +40,9 @@ export class ScheduleComponent implements OnInit {
     this.paymentValidationService.validarPago(payment.idSuscription, payment.idPayment, true).subscribe(
       response => {
         console.log('Pago aceptado:', response);
-        // Aquí puedes agregar lógica adicional, como actualizar la interfaz de usuario
       },
       error => {
         console.error('Error al aceptar el pago:', error);
-        // Manejar el error adecuadamente, por ejemplo, mostrar un mensaje al usuario
       }
     );
   }
@@ -54,11 +52,9 @@ export class ScheduleComponent implements OnInit {
     this.paymentValidationService.validarPago(payment.idSuscription, payment.idPayment, false, reason).subscribe(
       response => {
         console.log('Pago rechazado:', response);
-        // Aquí puedes agregar lógica adicional, como actualizar la interfaz de usuario
       },
       error => {
         console.error('Error al rechazar el pago:', error);
-        // Manejar el error adecuadamente, por ejemplo, mostrar un mensaje al usuario
       }
     );
   }

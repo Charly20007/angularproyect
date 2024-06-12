@@ -33,13 +33,11 @@ export class MembershipsComponent implements OnInit {
     if (userId !== null) {
       this.suscriptionService.getSuscriptions(userId).subscribe(
         (data: ApiResponse) => {
-          console.log('API response:', data);  // Log the API response
-          this.suscriptions = data,
-          console.log('Suscriptions:', this.suscriptions);  // Log the suscriptions variable
+          this.suscriptions = data; 
         },
         error => {
           this.errorMessage = 'Error al cargar las suscripciones.';
-          console.error('API error:', error);  // Log any errors
+          console.error('API error:', error);  
         }
       );
     } else {
